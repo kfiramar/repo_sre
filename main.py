@@ -48,10 +48,10 @@ def main():
     scheduler = BlockingScheduler()
     scheduler.add_job(update_metrics, 'interval',
                       seconds=REQUEST_EVERY, args=(pypi_package,), id='pypi_job',)
-    # scheduler.add_job(update_metrics, 'interval',
-    #                   seconds=REQUEST_EVERY, args=(npm_package,), id='npm_job',)
-    # scheduler.add_job(update_metrics, 'interval',
-    #                   seconds=REQUEST_EVERY, args=(deb_package,), id='deb_job',)
+    scheduler.add_job(update_metrics, 'interval',
+                      seconds=REQUEST_EVERY, args=(npm_package,), id='npm_job',)
+    scheduler.add_job(update_metrics, 'interval',
+                      seconds=REQUEST_EVERY, args=(deb_package,), id='deb_job',)
     scheduler.start()
 
 
