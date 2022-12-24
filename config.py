@@ -36,3 +36,6 @@ TIMEOUT = config['GENERAL'].as_float('TIMEOUT')
 DEQUE_SIZE = config['GENERAL'].as_int('DEQUE_SIZE')
 SLA = config['GENERAL'].as_float('SLA')
 
+SUCCESS = config['TEXT']['SUCCESS']
+INCORRECT_HASH = config['TEXT']['INCORRECT_HASH']
+DOWNLOAD_FAILED = config['TEXT']['DOWNLOAD_FAILED']
