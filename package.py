@@ -3,6 +3,8 @@
 import hashlib
 import requests
 from config import TIMEOUT
+
+
 class BasicPackage:
     '''This class represents a row in a CLI chart'''
 
@@ -29,13 +31,13 @@ class BasicPackage:
             response = requests.get(package_url, timeout=TIMEOUT)
             response.raise_for_status()
             return cls(
-                package_type = package_type,
-                package_url = package_url,
-                package_hash = package_hash,
-                content = response.content,
-                failed_downloads_counter = failed_downloads_counter,
-                successful_downloads_counter = successful_downloads_counter,
-                request_time_summary = request_time_summary
+                package_type=package_type,
+                package_url=package_url,
+                package_hash=package_hash,
+                content=response.content,
+                failed_downloads_counter=failed_downloads_counter,
+                successful_downloads_counter=successful_downloads_counter,
+                request_time_summary=request_time_summary
             )
 
     def download_package(self):
@@ -46,10 +48,7 @@ class BasicPackage:
                 self.content = response.content
             except requests.exceptions.RequestException as exception:
                 return exception
-                
-            
-            
-            
+
     def verify_package_hash(self) -> bool:
         """Verify the hash of the given package."""
         package_hash = hashlib.sha256(self.content).hexdigest()
