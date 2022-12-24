@@ -1,7 +1,7 @@
 import collections
 import logging
 from apscheduler.schedulers.blocking import BlockingScheduler
-from package import BasicPackage
+from basic_package import BasicPackage
 from prometheus_items import up_status, pypi_request_time, pypi_successful_downloads, pypi_failed_downloads, npm_request_time, npm_successful_downloads, npm_failed_downloads, deb_request_time, deb_successful_downloads, deb_failed_downloads
 from config import DEB_HASH, DEB_PACKAGE_URL, DEQUE_SIZE, NPM_HASH, NPM_PACKAGE_URL, PYPI_HASH, PYPI_PACKAGE_URL, REQUEST_EVERY, SLA
 

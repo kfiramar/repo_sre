@@ -1,4 +1,3 @@
-import collections
 import configobj
 
 # create all the variables
@@ -33,7 +32,7 @@ DEB_PACKAGE_URL = config['DEB']['PACKAGE_URL'].format(
 
 
 REQUEST_EVERY = config['GENERAL'].as_int('REQUEST_EVERY')
-TIMEOUT = config['GENERAL'].as_int('TIMEOUT')
+TIMEOUT = config['GENERAL'].as_float('TIMEOUT')
 DEQUE_SIZE = config['GENERAL'].as_int('DEQUE_SIZE')
 SLA = config['GENERAL'].as_float('SLA')
 
